@@ -4,17 +4,57 @@
     margin: 0;
 }
 
-body {
+html, body {
     min-height: 100vh;
     background-color: hsl(233, 47%, 7%);
+    font-size: 15px;
+}
+
+main {
+    padding: 6rem 1.375rem;
 }
 
 .card {
     background-color: hsl(244, 38%, 16%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.image-div {
+    background-color: hsl(277, 64%, 41%);
+    border-radius: 1rem;
+    width: 100%;
+}
+
+img {
+  opacity: 0.5;  
+}
+
+.mobile-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.desktop-image {
+    display: none;
+}
+
+.content-area {
+    padding: 1.5rem;
 }
 
 .headline {
     color: hsl(0, 0%, 100%);
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.85rem;
+    font-weight: 700;
+    padding-top: 1rem;
 }
 
 span {
@@ -23,12 +63,66 @@ span {
 
 .sub-headline {
     color: hsla(0, 0%, 100%, 0.75);
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 1rem;
+    line-height: 1.75;
+}
+
+.stat-block {
+    padding: 0.5rem;
 }
 
 .stat-number {
     color: hsl(0, 0%, 100%);
+    font-family: 'Lexend Deca', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
 }
 
 .stat-type {
+    font-family: 'Lexend Deca', serif;
     color: hsla(0, 0%, 100%, 0.6);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+}
+
+@media screen and (min-width: 750px ) {
+    .card {
+        flex-direction: row-reverse;
+    }
+
+    .mobile-image {
+        display: none;
+    }
+
+    .image-div {
+        width: 50%;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+
+    .content-area {
+        padding: 1rem;
+        width: 50%;
+    }
+
+    .desktop-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+
+    .stat-div {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
 }
